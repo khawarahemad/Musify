@@ -31,7 +31,7 @@ const SearchView = ({ closeFullscreen }) => {
         </div>
 
         <button
-          className="w-[30%] px-2 py-4 bg-blue-800 text-white rounded-lg hover:bg-blue-900 flex items-center justify-center"
+          className="w-[30%] px-2 py-4 bg-emerald-900 text-white rounded-lg hover:bg-emerald-700 flex items-center justify-center"
           type="submit"
         >
         Create
