@@ -2,15 +2,22 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { assets } from "../assets/assets";
+import SearchView from "../pages/SearchView";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPremiumModalOpen, setIsPremiumModalOpen] = useState(false);
+  const [fullscreenView, setFullscreenView] = useState(null); // State for fullscreen view
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
     setIsDropdownOpen((prev) => !prev);
+  };
+
+  // Handle search navigation
+  const handleSearch = () => {
+    setFullscreenView("search");
   };
 
   const openPremiumModal = () => {
@@ -19,6 +26,11 @@ const Navbar = () => {
 
   const closePremiumModal = () => {
     setIsPremiumModalOpen(false);
+  };
+
+  // Close fullscreen view
+  const closeFullscreen = () => {
+    setFullscreenView(null);
   };
 
   // Close dropdown when clicking outside
@@ -67,7 +79,25 @@ const Navbar = () => {
         >
           Install App
         </p>
-
+        {/* Search in Mobile */}
+        <div className="md:hidden" onClick={handleSearch}>
+          <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            className="w-5 h-5 inline-block mr-1 cursor-pointer"
+          >
+            <path
+              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+              strokeWidth="2"
+              strokeLinejoin="round"
+              strokeLinecap="round"
+              stroke="currentColor"
+            ></path>
+          </svg>
+          Search
+        </div>
         {/* Profile Icon */}
         <div className="relative" ref={dropdownRef}>
           <p
@@ -249,6 +279,26 @@ const Navbar = () => {
                 </div>
               </div>
             </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Fullscreen Search View */}
+      <AnimatePresence>
+        {fullscreenView === "search" && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={closeFullscreen}
+          >
+            <div
+              className="text-center w-full max-w-lg p-8 flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <SearchView closeFullscreen={closeFullscreen} />
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
