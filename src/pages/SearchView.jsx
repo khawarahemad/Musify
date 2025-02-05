@@ -97,8 +97,8 @@ const SearchView = ({ closeFullscreen }) => {
 
       {/* Display Search Results with Banners */}
       {searchResults.length > 0 && (
-        <div className="mt-4 max-w-3xl mx-auto bg-gray-800 text-white rounded-lg p-4">
-          <h2 className="text-lg font-bold mb-2">Search Results:</h2>
+        <div className="mt-4 max-w-3xl mx-auto text-white rounded-lg p-4">
+          <h2 className="text-lg font-bold mb-2">Search Results</h2>
           <ul>
             {searchResults.map((track) => (
               <li key={track.id} className="flex items-center mb-3 p-2 bg-gray-900 rounded-lg">
