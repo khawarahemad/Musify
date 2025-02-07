@@ -1,19 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { AnimatePresence, motion } from "framer-motion";
 
 const SearchView = ({ closeFullscreen }) => {
   const [query, setQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [typingTimeout, setTypingTimeout] = useState(null);
+  const [showFullscreen, setShowFullscreen] = useState(false);
+  const [currentTrack, setCurrentTrack] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [time, setTime] = useState({ currentTime: 0, totalTime: 0 });
+  const audioRef = useRef(new Audio());
+  const seekBar = useRef(null);
+  const seekBg = useRef(null);
 
+  // Fetch search results
   useEffect(() => {
     if (!query.trim()) {
-      setSearchResults([]); // Clear results immediately
+      setSearchResults([]);
       return;
     }
-
     if (typingTimeout) clearTimeout(typingTimeout);
-
     const timeout = setTimeout(async () => {
       try {
         const response = await axios.get(
@@ -24,68 +31,120 @@ const SearchView = ({ closeFullscreen }) => {
         console.error("Error searching songs:", error);
       }
     }, 500);
-
     setTypingTimeout(timeout);
-
-    // Cleanup function to clear timeout on unmount or query change
     return () => clearTimeout(timeout);
   }, [query]);
 
+  // Play song in fullscreen
+  const playSong = (song) => {
+    if (currentTrack?.id === song.id && isPlaying) {
+      return; // Prevent replaying the same song
+    }
+    setCurrentTrack(song);
+    setShowFullscreen(true);
+
+    const audio = audioRef.current;
+    audio.src = song.file_path;
+    audio.load();
+    audio.play().then(() => setIsPlaying(true)).catch((err) => console.error("Playback error:", err));
+  };
+
+  // Toggle play/pause
+  const togglePlay = () => {
+    const audio = audioRef.current;
+    if (audio.paused) {
+      audio.play();
+      setIsPlaying(true);
+    } else {
+      audio.pause();
+      setIsPlaying(false);
+    }
+  };
+
+  // Handle time updates
+  useEffect(() => {
+    const audio = audioRef.current;
+    const handleTimeUpdate = () => {
+      setTime({
+        currentTime: audio.currentTime,
+        totalTime: audio.duration || 0,
+      });
+    };
+    audio.addEventListener("timeupdate", handleTimeUpdate);
+    return () => audio.removeEventListener("timeupdate", handleTimeUpdate);
+  }, []);
+
+  // Cleanup audio on unmount
+  useEffect(() => {
+    return () => {
+      audioRef.current.pause();
+      audioRef.current.src = "";
+    };
+  }, []);
+
+  // Format time (seconds to mm:ss)
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = Math.floor(seconds % 60);
+    return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
+  };
+
+  // Seek song on progress bar click
+  const seekSong = (e) => {
+    const rect = seekBg.current.getBoundingClientRect();
+    const percent = (e.clientX - rect.left) / rect.width;
+    const audio = audioRef.current;
+    audio.currentTime = percent * audio.duration;
+    setTime((prev) => ({ ...prev, currentTime: audio.currentTime }));
+  };
+
+  // Previous track
+  const previous = () => {
+    const currentIndex = searchResults.findIndex((song) => song.id === currentTrack.id);
+    if (currentIndex > 0) {
+      playSong(searchResults[currentIndex - 1]);
+    }
+  };
+
+  // Next track
+  const next = () => {
+    const currentIndex = searchResults.findIndex((song) => song.id === currentTrack.id);
+    if (currentIndex < searchResults.length - 1) {
+      playSong(searchResults[currentIndex + 1]);
+    }
+  };
+
   return (
     <div className="fixed top-0 left-0 w-full bg-black bg-opacity-50 p-4">
-      <form
-        onSubmit={(e) => e.preventDefault()}
-        className="flex items-center max-w-3xl mx-auto p-3 rounded-lg shadow-md"
-      >
-        <label className="sr-only" htmlFor="song-search">Search</label>
+      {/* Search Form */}
+      <form onSubmit={(e) => e.preventDefault()} className="flex items-center max-w-3xl mx-auto p-3 rounded-lg shadow-md">
         <div className="relative flex-grow w-[70%] pr-2">
           <input
             required
             placeholder="Search for a song..."
             className="block w-full p-4 ps-12 bg-[#242424] text-white text-sm border border-black rounded-lg focus:ring-blue-500 focus:border-blue-500"
-            id="song-search"
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
           />
         </div>
-        <button
-          className="w-[30%] px-2 py-4 bg-emerald-900 text-white rounded-lg hover:bg-emerald-700 flex items-center justify-center"
-          type="submit"
-        >
-          <svg
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            className="w-5 h-5 inline-block mr-1"
-          >
-            <path
-              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-              strokeWidth="2"
-              strokeLinejoin="round"
-              strokeLinecap="round"
-              stroke="currentColor"
-            ></path>
-          </svg>
+        <button className="w-[30%] px-2 py-4 bg-emerald-900 text-white rounded-lg hover:bg-emerald-700 flex items-center justify-center">
           Search
         </button>
       </form>
 
-      {/* Display Search Results with Album Titles */}
+      {/* Display Search Results */}
       {searchResults.length > 0 && (
         <div className="mt-4 max-w-3xl mx-auto text-white rounded-lg p-4">
           <h2 className="text-lg font-bold mb-2">Search Results</h2>
           <ul>
             {searchResults.map((song) => (
-              <li key={song.id} className="flex items-center mb-3 p-2 bg-gray-900 rounded-lg">
-                {song.album_cover && (
-                  <img
-                    src={song.album_cover}
-                    alt={song.album_title}
-                    className="w-16 h-16 rounded-lg mr-3"
-                  />
-                )}
+              <li
+                key={song.id}
+                className="flex items-center mb-3 p-2 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800"
+                onClick={() => playSong(song)}
+              >
+                <img src={song.album_cover} alt={song.album} className="w-16 h-16 rounded-lg mr-3" />
                 <div className="flex flex-col items-start">
                   <p className="text-lg font-semibold">{song.title}</p>
                   <p className="text-sm text-gray-400">Album: {song.album}</p>
@@ -95,6 +154,121 @@ const SearchView = ({ closeFullscreen }) => {
           </ul>
         </div>
       )}
+
+      {/* Fullscreen Music Player */}
+      <AnimatePresence>
+        {showFullscreen && currentTrack && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setShowFullscreen(false)}
+          >
+            <div className="text-center w-full max-w-lg p-8 flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+              <motion.img
+                className="w-96 h-96 rounded-lg mb-8 object-cover shadow-2xl"
+                src={currentTrack.album_cover}
+                alt="album-art"
+                initial={{ scale: 0.9 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 100 }}
+              />
+              <h2 className="text-5xl text-gray-300 font-bold mb-4">{currentTrack.title}</h2>
+              <p className="text-xl text-gray-400 mb-8">{currentTrack.album}</p>
+
+              {/* Player Controls */}
+              <div className="flex gap-6 items-center justify-center mb-6">
+                {/* Backward Button */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 cursor-pointer hover:opacity-80"
+                  onClick={() => {
+                    previous();
+                    setIsPlaying(false);
+                    setTimeout(() => setIsPlaying(true), 100); // Ensures play triggers after pause
+                  }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+
+                {/* Play/Pause Button */}
+                {isPlaying ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-12 h-12 cursor-pointer hover:opacity-80"
+                    onClick={() => {
+                      audioRef.current.pause();
+                      setIsPlaying(false);
+                    }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9v6m-4.5 0V9M9 9h6" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-12 h-12 cursor-pointer hover:opacity-80"
+                    onClick={() => {
+                      audioRef.current.play();
+                      setIsPlaying(true);
+                    }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                  </svg>
+                )}
+
+                {/* Forward Button */}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6 cursor-pointer hover:opacity-80"
+                  onClick={() => {
+                    next();
+                    setIsPlaying(false);
+                    setTimeout(() => setIsPlaying(true), 100); // Ensures play triggers after pause
+                  }}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="flex items-center gap-5 w-full text-white max-w-md">
+                <p className="text-sm">{formatTime(time.currentTime)}</p>
+                <div
+                  ref={seekBg}
+                  onClick={(e) => seekSong(e)}
+                  className="w-full bg-gray-300 rounded-full cursor-pointer relative h-2"
+                >
+                  <motion.hr
+                    ref={seekBar}
+                    className="h-full border-none bg-green-800 rounded-full absolute top-0 left-0"
+                    style={{
+                      width: time.totalTime > 0 ? `${(time.currentTime / time.totalTime) * 100}%` : "0%",
+                    }}
+                  />
+                </div>
+                <p className="text-sm">{formatTime(time.totalTime)}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

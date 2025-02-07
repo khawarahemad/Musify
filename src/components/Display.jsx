@@ -14,7 +14,7 @@ const Display = () => {
   // Fetch all songs from the API
   const fetchSongs = async () => {
     try {
-      const response = await fetch("http://localhost:3000/api/songs");
+      const response = await fetch("https://music-api-uvdl.onrender.com/api/songs");
       if (!response.ok) throw new Error("Failed to fetch songs");
       const data = await response.json();
       setSongsData(data);
@@ -28,7 +28,7 @@ const Display = () => {
   // Fetch songs by album ID
   const fetchAlbumSongs = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/songs?id=${id}`);
+      const response = await fetch(`https://music-api-uvdl.onrender.com/api/songs?id=${id}`);
       if (!response.ok) throw new Error("Failed to fetch album songs");
       const data = await response.json();
       setSongsData(data);
