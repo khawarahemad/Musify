@@ -60,6 +60,12 @@ const SearchView = ({ closeFullscreen }) => {
       setIsPlaying(false);
     }
   };
+  useEffect(() => {
+    const audio = audioRef.current;
+    const handleSongEnd = () => next(); // Play next song automatically
+    audio.addEventListener("ended", handleSongEnd);
+    return () => audio.removeEventListener("ended", handleSongEnd);
+  }, [currentTrack, searchResults]);
 
   // Handle time updates
   useEffect(() => {
