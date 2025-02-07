@@ -51,10 +51,11 @@ const Display = () => {
   // Set background color dynamically
   useEffect(() => {
     if (isAlbum) {
-      displayRef.current.style.background = `linear-gradient(#FF5733,#121212)`; // Example gradient
+      displayRef.current.style.background = `linear-gradient(to bottom, #121212 80%, #F5F5F5 100%)`; 
     } else {
       displayRef.current.style.background = "#121212";
     }
+      
   }, [isAlbum]);
 
   return (
