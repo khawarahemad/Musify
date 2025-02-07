@@ -6,24 +6,29 @@ const SearchView = ({ closeFullscreen }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [typingTimeout, setTypingTimeout] = useState(null);
 
-  // Step 1: Fetch Search Results When Typing Stops
   useEffect(() => {
-    if (!query) return;
+    if (!query.trim()) {
+      setSearchResults([]); // Clear results immediately
+      return;
+    }
 
     if (typingTimeout) clearTimeout(typingTimeout);
 
-    setTypingTimeout(
-      setTimeout(async () => {
-        try {
-          const response = await axios.get(
-            `https://music-api-uvdl.onrender.com/api/songs?title=${encodeURIComponent(query)}`
-          );
-          setSearchResults(response.data);
-        } catch (error) {
-          console.error("Error searching songs:", error);
-        }
-      }, 500)
-    );
+    const timeout = setTimeout(async () => {
+      try {
+        const response = await axios.get(
+          `https://music-api-uvdl.onrender.com/api/search?query=${encodeURIComponent(query)}`
+        );
+        setSearchResults(response.data);
+      } catch (error) {
+        console.error("Error searching songs:", error);
+      }
+    }, 500);
+
+    setTypingTimeout(timeout);
+
+    // Cleanup function to clear timeout on unmount or query change
+    return () => clearTimeout(timeout);
   }, [query]);
 
   return (
@@ -81,7 +86,7 @@ const SearchView = ({ closeFullscreen }) => {
                     className="w-16 h-16 rounded-lg mr-3"
                   />
                 )}
-                <div>
+                <div className="flex flex-col items-start">
                   <p className="text-lg font-semibold">{song.title}</p>
                   <p className="text-sm text-gray-400">Album: {song.album}</p>
                 </div>
