@@ -75,43 +75,43 @@ export const assets = {
 export const albumsData = [
     {   
         id:0,
-        name: "Top 50 Global",
-        image: img8,
+        name: "Honey 3.0",
+        image: "https://i.scdn.co/image/ab67616d0000b273c279c63a20be981bddcbec61",
         desc:"Your weekly update of the most played tracks",
         bgColor:"#2a4365"
     },
     {   
         id:1,
-        name: "Top 50 India",
-        image: img9,
+        name: "DEADLY TIMES",
+        image: "https://i.scdn.co/image/ab67616d0000b27368efbf2e90c0bf0e6c718734",
         desc:"Your weekly update of the most played tracks",
         bgColor:"#22543d"
     },
     {   
         id:2,
-        name: "Trending India",
-        image: img10,
+        name: "Lover",
+        image: "https://i.scdn.co/image/ab67616d0000b27343e2febdfe833cc820a879e2",
         desc:"Your weekly update of the most played tracks",
         bgColor:"#742a2a"
     },
     {   
         id:3,
-        name: "Trending Global",
-        image: img16,
+        name: "Glory",
+        image: "https://i.scdn.co/image/ab67616d0000b273aad3f4b601ae8763b3fc4e88",
         desc:"Your weekly update of the most played tracks",
         bgColor:"#44337a"
     },
     {   
         id:4,
-        name: "Mega Hits,",
-        image: img11,
+        name: "Timeless Love,",
+        image: "https://i.scdn.co/image/ab67616d0000b27347474eb7eb349555851c3e6f",
         desc:"Your weekly update of the most played tracks",
         bgColor:"#234e52"
     },
     {   
         id:5,
-        name: "Happy Favorites",
-        image: img15,
+        name: "YRF Top 10",
+        image: "https://i.scdn.co/image/ab67616d0000b273f7991610fad937fd9f29f55d",
         desc:"Your weekly update of the most played tracks",
         bgColor:"#744210"
     }
@@ -120,7 +120,7 @@ export const albumsData = [
 export const songsData = [
     {
         id:0,
-        name: "Kutti Story",
+        name: "Kitna Chahe",
         image: img1,
         file:song1,
         desc:"Aniruth Ravichander,Thalapathy Vijay",
