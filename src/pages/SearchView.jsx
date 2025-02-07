@@ -171,7 +171,28 @@ const SearchView = ({ closeFullscreen }) => {
             exit={{ opacity: 0 }}
             onClick={() => setShowFullscreen(false)}
           >
-            <div className="text-center w-full max-w-lg p-8 flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+            {/* Close Button in Upper-Right Corner */}
+            <div
+                className="absolute top-4 right-4 text-white hover:opacity-80 block md:hidden"
+                onClick={() => setShowFullscreen(false)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-8 h-8"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+            {/* Main Player Container */}
+            <div
+              className="relative text-center w-full max-w-lg p-8 flex flex-col items-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Album Art */}
               <motion.img
                 className="w-96 h-96 rounded-lg mb-8 object-cover shadow-2xl"
                 src={currentTrack.album_cover}
@@ -180,6 +201,8 @@ const SearchView = ({ closeFullscreen }) => {
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", stiffness: 100 }}
               />
+
+              {/* Track Info */}
               <h2 className="text-5xl text-gray-300 font-bold mb-4">{currentTrack.title}</h2>
               <p className="text-xl text-gray-400 mb-8">{currentTrack.album}</p>
 
@@ -190,13 +213,13 @@ const SearchView = ({ closeFullscreen }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={1.5}
+                  strokeWidth={2}
                   stroke="currentColor"
-                  className="w-6 h-6 cursor-pointer hover:opacity-80"
+                  className="w-8 h-8 cursor-pointer hover:opacity-80"
                   onClick={() => {
                     previous();
                     setIsPlaying(false);
-                    setTimeout(() => setIsPlaying(true), 100); // Ensures play triggers after pause
+                    setTimeout(() => setIsPlaying(true), 100);
                   }}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -208,31 +231,34 @@ const SearchView = ({ closeFullscreen }) => {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={1.5}
+                    strokeWidth={2}
                     stroke="currentColor"
-                    className="w-12 h-12 cursor-pointer hover:opacity-80"
+                    className="w-14 h-14 cursor-pointer hover:opacity-80"
                     onClick={() => {
                       audioRef.current.pause();
                       setIsPlaying(false);
                     }}
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h2.5v14H9V5zm5.5 0h2.5v14h-2.5V5z" />
-
                   </svg>
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={1.5}
+                    strokeWidth={2}
                     stroke="currentColor"
-                    className="w-12 h-12 cursor-pointer hover:opacity-80"
+                    className="w-14 h-14 cursor-pointer hover:opacity-80"
                     onClick={() => {
                       audioRef.current.play();
                       setIsPlaying(true);
                     }}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+                    />
                   </svg>
                 )}
 
@@ -241,13 +267,13 @@ const SearchView = ({ closeFullscreen }) => {
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  strokeWidth={1.5}
+                  strokeWidth={2}
                   stroke="currentColor"
-                  className="w-6 h-6 cursor-pointer hover:opacity-80"
+                  className="w-8 h-8 cursor-pointer hover:opacity-80"
                   onClick={() => {
                     next();
                     setIsPlaying(false);
-                    setTimeout(() => setIsPlaying(true), 100); // Ensures play triggers after pause
+                    setTimeout(() => setIsPlaying(true), 100);
                   }}
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -276,6 +302,7 @@ const SearchView = ({ closeFullscreen }) => {
           </motion.div>
         )}
       </AnimatePresence>
+
     </div>
   );
 };

@@ -50,6 +50,23 @@ const Player = () => {
               className="text-center w-full max-w-lg p-8 flex flex-col items-center"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* Close Button in Upper-Right Corner */}
+              <div
+                className="absolute top-4 right-4 text-white hover:opacity-80 block md:hidden"
+                onClick={() => setShowFullscreen(false)}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={2}
+                  stroke="currentColor"
+                  className="w-8 h-8"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+
               {/* Album Art */}
               <motion.img
                 className="w-96 h-96 rounded-lg mb-8 object-cover shadow-2xl"
