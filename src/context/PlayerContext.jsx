@@ -4,7 +4,7 @@ import { songsData } from "../assets/assets";
 export const PlayerContext = createContext();
 
 const PlayerContextProvider = ({ children }) => {
-  const audioRef = useRef(new Audio(songsData[0].src)); // Initial track
+  const audioRef = useRef(new Audio(songsData[0].src)); 
   const seekBg = useRef(null);
   const seekBar = useRef(null);
 
