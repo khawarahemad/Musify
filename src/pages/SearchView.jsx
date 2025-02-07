@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import { AnimatePresence, motion } from "framer-motion";
+import { div } from "motion/react-client";
 
 const SearchView = ({ closeFullscreen }) => {
   const [query, setQuery] = useState("");
@@ -207,8 +208,9 @@ const SearchView = ({ closeFullscreen }) => {
               <p className="text-xl text-gray-400 mb-8">{currentTrack.album}</p>
 
               {/* Player Controls */}
-              <div className="flex gap-6 items-center justify-center mb-6">
+              <div className="flex gap-6 items-center text-white justify-center mb-6">
                 {/* Backward Button */}
+                <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -224,9 +226,11 @@ const SearchView = ({ closeFullscreen }) => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
+                </div>
 
                 {/* Play/Pause Button */}
                 {isPlaying ? (
+                  <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -241,7 +245,9 @@ const SearchView = ({ closeFullscreen }) => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h2.5v14H9V5zm5.5 0h2.5v14h-2.5V5z" />
                   </svg>
+                  </div>
                 ) : (
+                  <div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -260,9 +266,11 @@ const SearchView = ({ closeFullscreen }) => {
                       d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
                     />
                   </svg>
+                  </div>
                 )}
 
                 {/* Forward Button */}
+                <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -278,6 +286,7 @@ const SearchView = ({ closeFullscreen }) => {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
+                </div>
               </div>
 
               {/* Progress Bar */}
