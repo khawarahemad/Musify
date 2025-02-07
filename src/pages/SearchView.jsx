@@ -210,7 +210,8 @@ const SearchView = ({ closeFullscreen }) => {
                       setIsPlaying(false);
                     }}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9v6m-4.5 0V9M9 9h6" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h2.5v14H9V5zm5.5 0h2.5v14h-2.5V5z" />
+
                   </svg>
                 ) : (
                   <svg
