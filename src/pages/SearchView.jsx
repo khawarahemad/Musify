@@ -122,7 +122,7 @@ const SearchView = ({ closeFullscreen }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-black bg-opacity-50 p-4">
+    <div className="SeaRchView fixed top-0 left-0 w-full bg-black bg-opacity-50 p-4">
       {/* Search Form */}
       <form onSubmit={(e) => e.preventDefault()} className="flex items-center max-w-3xl mx-auto p-3 rounded-lg shadow-md">
         <div className="relative flex-grow w-[70%] pr-2">

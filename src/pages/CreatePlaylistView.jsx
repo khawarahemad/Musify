@@ -9,7 +9,7 @@ const SearchView = ({ closeFullscreen }) => {
   };
 
   return (
-    <div className="fixed top-0 left-0 w-full bg-black bg-opacity-50 p-4">
+    <div className="CrtPllist fixed top-0 left-0 w-full bg-black bg-opacity-50 p-4">
       <form
         onSubmit={handleSearch}
         className="flex items-center max-w-3xl mx-auto  p-3 rounded-lg shadow-md"
