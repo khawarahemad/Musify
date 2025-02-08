@@ -44,6 +44,7 @@ import song3 from  './song3.mp3'
 import song4 from  './song4.mp3'
 import song5 from  './song5.mp3'
 import song6 from  './song6.mp3'
+import { useState, useEffect } from 'react';
 
 export const assets = {
     bell_icon,
