@@ -184,12 +184,20 @@ const DisplayAlbum = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setShowFullscreen(false)}
+            onClick={() => { 
+              setShowFullscreen(false); 
+              setIsPlaying(false);
+            }}
+            
           >
             {/* Close Button in Upper-Right Corner */}
             <div
               className="absolute top-4 right-4 text-white hover:opacity-80 block md:hidden"
-              onClick={() => setShowFullscreen(false)}
+              onClick={() => { 
+                setShowFullscreen(false); 
+                setIsPlaying(false);
+              }}
+              
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
