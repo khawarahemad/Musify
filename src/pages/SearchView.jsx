@@ -174,20 +174,20 @@ const SearchView = ({ closeFullscreen }) => {
           >
             {/* Close Button in Upper-Right Corner */}
             <div
-                className="absolute top-4 right-4 text-white hover:opacity-80 block md:hidden"
-                onClick={() => setShowFullscreen(false)}
+              className="absolute top-4 right-4 text-white hover:opacity-80 block md:hidden"
+              onClick={() => setShowFullscreen(false)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-8 h-8"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-8 h-8"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </div>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
             {/* Main Player Container */}
             <div
               className="relative text-center w-full max-w-lg p-8 flex flex-col items-center"
@@ -209,83 +209,90 @@ const SearchView = ({ closeFullscreen }) => {
 
               {/* Player Controls */}
               <div className="flex gap-6 items-center text-white justify-center mb-6">
+                {/* Music svg */}
+                <div className="text-white hover:opacity-80 block md:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-3"><circle cx="12" cy="18" r="4" /><path d="M16 18V2" /></svg>
+                </div>
                 {/* Backward Button */}
                 <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-8 h-8 cursor-pointer hover:opacity-80"
-                  onClick={() => {
-                    previous();
-                    setIsPlaying(false);
-                    setTimeout(() => setIsPlaying(true), 100);
-                  }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-8 h-8 cursor-pointer hover:opacity-80"
+                    onClick={() => {
+                      previous();
+                      setIsPlaying(false);
+                      setTimeout(() => setIsPlaying(true), 100);
+                    }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
                 </div>
 
                 {/* Play/Pause Button */}
                 {isPlaying ? (
                   <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="w-14 h-14 cursor-pointer hover:opacity-80"
-                    onClick={() => {
-                      audioRef.current.pause();
-                      setIsPlaying(false);
-                    }}
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h2.5v14H9V5zm5.5 0h2.5v14h-2.5V5z" />
-                  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="currentColor"
+                      className="w-14 h-14 cursor-pointer hover:opacity-80"
+                      onClick={() => {
+                        audioRef.current.pause();
+                        setIsPlaying(false);
+                      }}
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5h2.5v14H9V5zm5.5 0h2.5v14h-2.5V5z" />
+                    </svg>
                   </div>
                 ) : (
                   <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={2}
-                    stroke="currentColor"
-                    className="w-14 h-14 cursor-pointer hover:opacity-80"
-                    onClick={() => {
-                      audioRef.current.play();
-                      setIsPlaying(true);
-                    }}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
-                    />
-                  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={2}
+                      stroke="currentColor"
+                      className="w-14 h-14 cursor-pointer hover:opacity-80"
+                      onClick={() => {
+                        audioRef.current.play();
+                        setIsPlaying(true);
+                      }}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z"
+                      />
+                    </svg>
                   </div>
                 )}
 
                 {/* Forward Button */}
                 <div>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="w-8 h-8 cursor-pointer hover:opacity-80"
-                  onClick={() => {
-                    next();
-                    setIsPlaying(false);
-                    setTimeout(() => setIsPlaying(true), 100);
-                  }}
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={2}
+                    stroke="currentColor"
+                    className="w-8 h-8 cursor-pointer hover:opacity-80"
+                    onClick={() => {
+                      next();
+                      setIsPlaying(false);
+                      setTimeout(() => setIsPlaying(true), 100);
+                    }}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </div>
+                <div className="text-white hover:opacity-80 block md:hidden" onClick={() => setShowFullscreen(false)} >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3" /><path d="M21 8h-3a2 2 0 0 1-2-2V3" /><path d="M3 16h3a2 2 0 0 1 2 2v3" /><path d="M16 21v-3a2 2 0 0 1 2-2h3" /></svg>
                 </div>
               </div>
 

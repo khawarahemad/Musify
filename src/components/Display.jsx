@@ -51,17 +51,17 @@ const Display = () => {
   // Set background color dynamically
   useEffect(() => {
     if (isAlbum) {
-      displayRef.current.style.background = `linear-gradient(to bottom, #121212 80%, #F5F5F5 100%)`; 
+      displayRef.current.style.background = `linear-gradient(to bottom, #121212 80%, #F5F5F5 100%)`;
     } else {
       displayRef.current.style.background = "#121212";
     }
-      
+
   }, [isAlbum]);
 
   return (
     <div
       ref={displayRef}
-      className="w-[100%] m-2 rounded bg-[#121212] text-white overflow-auto lg:w-[75%] lg:ml-0"
+      className="DispLay w-[100%] m-2 rounded bg-[#121212] text-white overflow-auto lg:w-[75%] lg:ml-0"
     >
       <Routes>
         {/* Pass songsData and loading state to DisplayHome */}

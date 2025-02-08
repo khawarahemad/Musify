@@ -48,7 +48,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="w-full flex justify-between items-center font-semibold">
+
+    <div className="navBar w-full flex justify-between items-center font-semibold">
       {/* Navigation Buttons */}
       <div className="flex items-center gap-2">
         <img
@@ -63,7 +64,11 @@ const Navbar = () => {
           alt="Forward"
           onClick={() => navigate(+1)}
         />
+        <div className="rounded-2xl text-[15px]">
+          Musify
+        </div>
       </div>
+
 
       {/* Right Section */}
       <div className="flex items-center gap-4">
@@ -73,12 +78,12 @@ const Navbar = () => {
         >
           Explore Premium
         </p>
-        <p
+        {/*<p
           className="bg-black py-1 px-3 rounded-2xl text-[15px] cursor-pointer"
           onClick={closePremiumModal}
         >
           Install App
-        </p>
+        </p>*/}
         {/* Search in Mobile */}
         <div className="md:hidden" onClick={handleSearch}>
           <svg

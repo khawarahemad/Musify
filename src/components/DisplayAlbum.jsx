@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const DisplayAlbum = () => {
   const { id } = useParams();
-  
+
   const albumName = albumsData[id]?.name;
   const [albumData, setAlbumData] = useState(null);
   const [songs, setSongs] = useState([]);
@@ -48,7 +48,7 @@ const DisplayAlbum = () => {
       playSong(songs[currentIndex - 1]);
     }
   };
-  
+
   const next = () => {
     if (!currentTrack) return;
     const currentIndex = songs.findIndex((song) => song.id === currentTrack.id);
@@ -58,25 +58,25 @@ const DisplayAlbum = () => {
   };
   useEffect(() => {
     const audio = audioRef.current;
-  
+
     const updateTime = () => {
       setTime({ currentTime: audio.currentTime, totalTime: audio.duration });
     };
-  
+
     const handleSongEnd = () => {
       next(); // Automatically play the next song
     };
-  
+
     audio.addEventListener("timeupdate", updateTime);
     audio.addEventListener("ended", handleSongEnd); // Listen for song end
-  
+
     return () => {
       audio.removeEventListener("timeupdate", updateTime);
       audio.removeEventListener("ended", handleSongEnd); // Cleanup
     };
   }, [currentTrack]); // Re-run when track changes
-  
-  
+
+
   const playSong = (song) => {
     setCurrentTrack(song);
     setShowFullscreen(true);
@@ -129,8 +129,13 @@ const DisplayAlbum = () => {
       <Navbar />
 
       <div className="mt-10 flex flex-col md:flex-row md:items-end px-4">
-        <div className="relative mb-4 md:mb-0">
-          <img className="w-32 md:w-48 rounded" src={albumData.image} alt={albumData.name} />
+        {/* Album Image */}
+        <div className="relative mb-4 md:mb-0 w-full md:w-auto">
+          <img
+            className="w-full md:w-48 rounded max-w-[300px] mx-auto"
+            src={albumData.image}
+            alt={albumData.name}
+          />
           <img
             className="absolute bottom-2 right-2 w-6 md:w-10 opacity-0 transition-opacity duration-200 hover:opacity-100 cursor-pointer"
             src={assets.play_icon}
@@ -142,9 +147,13 @@ const DisplayAlbum = () => {
             }}
           />
         </div>
-        <div className="flex flex-col ml-0 md:ml-8">
-          <p className="text-xs md:text-sm uppercase">Playlist</p>
-          <h2 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-2">{albumData.name}</h2>
+
+        {/* Album Info */}
+        <div className="flex flex-col ml-0 md:ml-8 mt-4 md:mt-0">
+          <p className="text-xs md:text-sm uppercase text-gray-500">Playlist</p>
+          <h2 className="text-2xl md:text-3xl lg:text-5xl xl:text-7xl font-bold mb-2">
+            {albumData.name}
+          </h2>
         </div>
       </div>
 
@@ -184,20 +193,20 @@ const DisplayAlbum = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => { 
-              setShowFullscreen(false); 
+            onClick={() => {
+              setShowFullscreen(false);
               setIsPlaying(false);
             }}
-            
+
           >
             {/* Close Button in Upper-Right Corner */}
             <div
               className="absolute top-4 right-4 text-white hover:opacity-80 block md:hidden"
-              onClick={() => { 
-                setShowFullscreen(false); 
+              onClick={() => {
+                setShowFullscreen(false);
                 setIsPlaying(false);
               }}
-              
+
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -232,6 +241,9 @@ const DisplayAlbum = () => {
 
               {/* Player Controls */}
               <div className="flex gap-6 items-center text-white justify-center mb-6">
+                <div className="text-white hover:opacity-80 block md:hidden">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music-3"><circle cx="12" cy="18" r="4" /><path d="M16 18V2" /></svg>
+                </div>
                 {/* Backward Button */}
                 <div>
                   <svg
@@ -309,6 +321,12 @@ const DisplayAlbum = () => {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                   </svg>
+                </div>
+                <div className="text-white hover:opacity-80 block md:hidden" onClick={() => {
+                  setShowFullscreen(false);
+                  setIsPlaying(false);
+                }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minimize"><path d="M8 3v3a2 2 0 0 1-2 2H3" /><path d="M21 8h-3a2 2 0 0 1-2-2V3" /><path d="M3 16h3a2 2 0 0 1 2 2v3" /><path d="M16 21v-3a2 2 0 0 1 2-2h3" /></svg>
                 </div>
               </div>
 
