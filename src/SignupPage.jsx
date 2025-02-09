@@ -46,17 +46,17 @@ const SignupPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="flex items-center justify-center min-h-screen bg-gray-900 text-white"
+      className="flex items-center justify-center min-h-screen bg-gray-900 text-white px-4"
     >
-      <div className="w-full max-w-md p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
+      <div className="w-full max-w-md p-6 sm:p-8 space-y-6 bg-gray-800 rounded-lg shadow-lg">
         <div className="text-center">
           <img
             src="https://github.com/khawarahemad/Musify/blob/main/public/Musify.png?raw=true"
             alt="Musify Logo"
-            className="w-24 h-24 mx-auto mb-4"
+            className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4"
           />
-          <h1 className="text-3xl font-bold text-green-400">Musify</h1>
-          <h2 className="text-2xl font-bold mt-2">Sign up</h2>
+          <h1 className="text-2xl sm:text-3xl font-bold text-green-400">Musify</h1>
+          <h2 className="text-xl sm:text-2xl font-bold mt-2">Sign up</h2>
         </div>
         <form onSubmit={handleSignup} className="space-y-4">
           <div>
@@ -66,7 +66,7 @@ const SignupPage = () => {
               placeholder="Username"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-md focus:outline-none"
+              className="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
           <div>
@@ -76,7 +76,7 @@ const SignupPage = () => {
               placeholder="your@email.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-md focus:outline-none"
+              className="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
           <div>
@@ -86,7 +86,7 @@ const SignupPage = () => {
               placeholder="******"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-md focus:outline-none"
+              className="w-full px-4 py-2 mt-1 text-gray-900 bg-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400"
             />
           </div>
           {error && <p className="text-red-500 text-sm">{error}</p>}
@@ -105,7 +105,6 @@ const SignupPage = () => {
               Log in
             </span>
           </p>
-
         </form>
       </div>
     </motion.div>
