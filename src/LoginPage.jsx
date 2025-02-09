@@ -48,9 +48,9 @@ const LoginPage = ({ setIsAuth }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="flex items-center justify-center min-h-screen bg-gray-900 text-white px-4"
+      className="flex items-center justify-center min-h-screen bg-black text-white px-4"
     >
-      <div className="w-full max-w-md p-6 space-y-6 bg-gray-800 rounded-lg shadow-lg sm:p-8">
+      <div className="w-full max-w-md p-6 space-y-6 bg-[#242424] rounded-lg shadow-lg sm:p-8">
         <div className="text-center">
           <img
             src="https://github.com/khawarahemad/Musify/blob/main/public/Musify.png?raw=true"

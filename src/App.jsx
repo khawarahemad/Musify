@@ -6,6 +6,8 @@ import Sidebar from "./components/Sidebar";
 import Display from "./components/Display";
 import Player from "./components/Player";
 import { PlayerContext } from "./context/PlayerContext";
+import DisplayHome from "./components/DisplayHome";
+import DisplayAlbum from "./components/DisplayAlbum";
 
 const App = () => {
   const { audioRef, track } = useContext(PlayerContext);
@@ -36,7 +38,7 @@ const App = () => {
             <div className="h-screen bg-black">
               <div className="h-[90%] flex">
                 <Sidebar />
-                <Display />
+                <Display /> {/* Display component will handle nested routes */}
               </div>
               <Player />
               <audio ref={audioRef} src={track?.file} preload="auto" />
@@ -45,7 +47,11 @@ const App = () => {
             <Navigate to="/login" replace />
           )
         }
-      />
+      >
+        {/* Nested routes for Display */}
+        <Route index element={<DisplayHome />} />
+        <Route path="album/:id" element={<DisplayAlbum />} />
+      </Route>
       {/* Fallback Route */}
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
