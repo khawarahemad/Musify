@@ -36,6 +36,7 @@ const Player = () => {
 
   return (
     <>
+    <div class="hidden">
       {/* Fullscreen Player */}
       <AnimatePresence>
         {showFullscreen && (
@@ -227,6 +228,7 @@ const Player = () => {
           </div>
         </div>
       </motion.div>
+      </div>
     </>
   );
 };

@@ -107,7 +107,7 @@ const PlayerContextProvider = ({ children }) => {
     setShowFullscreen,
   };
 
-  return <PlayerContext.Provider value={contextValue}>{children}</PlayerContext.Provider>;
+  return <PlayerContext.Provider value={contextValue}>{children} </PlayerContext.Provider>;
 };
 
 export default PlayerContextProvider;
