@@ -141,26 +141,28 @@ const SearchView = ({ closeFullscreen }) => {
       </form>
 
       {/* Display Search Results */}
-      {searchResults.length > 0 && (
-        <div className="mt-4 max-w-3xl mx-auto text-white rounded-lg p-4">
-          <h2 className="text-lg font-bold mb-2">Search Results</h2>
-          <ul>
-            {searchResults.map((song) => (
-              <li
-                key={song.id}
-                className="flex items-center mb-3 p-2 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800"
-                onClick={() => playSong(song)}
-              >
-                <img src={song.album_cover} alt={song.album} className="w-16 h-16 rounded-lg mr-3" />
-                <div className="flex flex-col items-start">
-                  <p className="text-lg font-semibold">{song.title}</p>
-                  <p className="text-sm text-gray-400">Album: {song.album}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+{searchResults.length > 0 && (
+  <div className="mt-4 max-w-3xl mx-auto text-white rounded-lg p-4">
+    <h2 className="text-lg font-bold mb-2">Search Results</h2>
+    <div className="max-h-96 overflow-y-auto"> {/* Add scroll container */}
+      <ul>
+        {searchResults.map((song) => (
+          <li
+            key={song.id}
+            className="flex items-center mb-3 p-2 bg-gray-900 rounded-lg cursor-pointer hover:bg-gray-800"
+            onClick={() => playSong(song)}
+          >
+            <img src={song.album_cover} alt={song.album} className="w-16 h-16 rounded-lg mr-3" />
+            <div className="flex flex-col items-start">
+              <p className="text-lg font-semibold">{song.title}</p>
+              <p className="text-sm text-gray-400">Album: {song.album}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
 
       {/* Fullscreen Music Player */}
       <AnimatePresence>
