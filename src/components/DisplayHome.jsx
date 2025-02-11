@@ -17,7 +17,7 @@ const DisplayHome = () => {
     <>
       <Navbar />
       <div className="mb-4">
-        <h1 className="my-5 px-4 font-bold text-2xl">Top PlayList</h1>
+        <h1 className="my-5 px-6 font-bold text-2xl">Top PlayList</h1>
         <div className="grid grid-cols-2  sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {albumsData.map((item, index) => (
             <AlbumItem
@@ -33,7 +33,7 @@ const DisplayHome = () => {
 
       <div className="mb-4">
         <h1 className="my-5 font-bold px-4 text-2xl">Today&apos;s Biggest Hits</h1>
-        <div className="flex overflow-x-auto space-x-3 scrollbar-hide w-full">
+        <div className="flex overflow-x-auto space-x-2 scrollbar-hide w-full">
           {TopHit.map((item, index) => (
             <div
               key={item.id}
@@ -52,7 +52,7 @@ const DisplayHome = () => {
 
       <div className="mb-4">
         <h1 className="my-5 font-bold px-4 text-2xl">Arijit Singh</h1>
-        <div className="flex overflow-x-auto space-x-3 scrollbar-hide w-full">
+        <div className="flex overflow-x-auto space-x-2 scrollbar-hide w-full">
           {Arijit_Singh.map((item, index) => (
             <div
               key={item.id}
@@ -69,7 +69,7 @@ const DisplayHome = () => {
         </div>
         <div className="mb-4">
           <h1 className="my-5 font-bold px-4 text-2xl">A.R. Rahman</h1>
-          <div className="flex overflow-x-auto space-x-3 scrollbar-hide w-full">
+          <div className="flex overflow-x-auto space-x-2 scrollbar-hide w-full">
             {songsData2.map((item, index) => (
             <div
               key={item.id}
@@ -87,7 +87,7 @@ const DisplayHome = () => {
         </div>
         <div className="mb-4">
           <h1 className="my-5 font-bold px-4 text-2xl">Seedhe maut</h1>
-          <div className="flex overflow-x-auto space-x-3 scrollbar-hide w-full">
+          <div className="flex overflow-x-auto space-x-2 scrollbar-hide w-full">
             {sidheMot.map((item, index) => (
             <div
               key={item.id}
