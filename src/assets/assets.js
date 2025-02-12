@@ -204,7 +204,7 @@ export const TopHit =[
         "title": "Ishq",
         "album": "Lost;Found",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2730de04fd2c7c3bdc0a1d765f5",
-        "file_path": "songs/Ishq.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Ishq.mp3"
     },
     {
         "id": 3,
@@ -248,70 +248,70 @@ export const songsData2 = [
         "title": "Agar Tum Saath Ho (From \"Tamasha\")",
         "album": "A.R. Rahman All Time Favourites",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2731bea41b64855e2efd68d5fcb",
-        "file_path": "songs/Agar_Tum_Saath_Ho_From_Tamasha.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Agar_Tum_Saath_Ho_From_Tamasha.mp3"
     },
     {
         "id": 2,
         "title": "Tere Bina",
         "album": "Guru (Original Motion Picture Soundtrack)",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2730504fdf58bae8cd52dd13047",
-        "file_path": "songs/Tere_Bina.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Tere_Bina.mp3"
     },
     {
         "id": 3,
         "title": "Kabhi Kabhi Aditi (From \"Jaane Tu... Ya Jaane Na\")",
         "album": "A.R. Rahman All Time Favourites",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2731bea41b64855e2efd68d5fcb",
-        "file_path": "songs/Kabhi_Kabhi_Aditi_From_Jaane_Tu..._Ya_Jaane_Na.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Kabhi_Kabhi_Aditi_From_Jaane_Tu..._Ya_Jaane_Na.mp3"
     },
     {
         "id": 4,
         "title": "Kun Faya Kun",
         "album": "Rockstar",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b27354e544672baa16145d67612b",
-        "file_path": "songs/Kun_Faya_Kun.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Kun_Faya_Kun.mp3"
     },
     {
         "id": 5,
         "title": "Rait Zara Si (From \"Atrangi Re\")",
         "album": "Rait Zara Si (From \"Atrangi Re\")",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273004f83c1be7d66c4677b32a8",
-        "file_path": "songs/Rait_Zara_Si_From_Atrangi_Re.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Rait_Zara_Si_From_Atrangi_Re.mp3"
     },
     {
         "id": 6,
         "title": "Yennai Izhukkuthadi (From \"Kadhalikka Neramillai\")",
         "album": "Yennai Izhukkuthadi (From \"Kadhalikka Neramillai\")",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273a3288b749195fb39e6e5ac2b",
-        "file_path": "songs/Yennai_Izhukkuthadi_From_Kadhalikka_Neramillai.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Yennai_Izhukkuthadi_From_Kadhalikka_Neramillai.mp3"
     },
     {
         "id": 7,
         "title": "Tum Tak",
         "album": "Raanjhanaa (Original Motion Picture Soundtrack)",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273a00249b8bf77312ec156dd4b",
-        "file_path": "songs/Tum_Tak.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Tum_Tak.mp3"
     },
     {
         "id": 8,
         "title": "Maahi Ve",
         "album": "Highway",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2731f4e9ecaf6913e207810093f",
-        "file_path": "songs/Maahi_Ve.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Maahi_Ve.mp3"
     },
     {
         "id": 9,
         "title": "Water Packet (From \"Raayan\")",
         "album": "Water Packet (From \"Raayan\")",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2734c8ed16792cb66f09aa75b8c",
-        "file_path": "songs/Water_Packet_From_Raayan.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Water_Packet_From_Raayan.mp3"
     },
     {
         "id": 10,
         "title": "Jashn-E-Bahaaraa",
         "album": "Jodhaa Akbar (Original Motion Picture Soundtrack)",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b27346131d4d7919c5cacd15c7d3",
-        "file_path": "songs/Jashn-E-Bahaaraa.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Jashn-E-Bahaaraa.mp3"
     }
 ]
 export const Arijit_Singh = [
@@ -320,70 +320,70 @@ export const Arijit_Singh = [
         "title": "Sajni (From \"Laapataa Ladies\")",
         "album": "Sajni (From \"Laapataa Ladies\")",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273d5f4378b1ffc9119fdc7306d",
-        "file_path": "songs/Sajni_From_Laapataa_Ladies.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Sajni_From_Laapataa_Ladies.mp3"
     },
     {
         "id": 2,
         "title": "Apna Bana Le",
         "album": "Bhediya (Original Motion Picture Soundtrack)",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273b85b4e8fb6ba961aedfde386",
-        "file_path": "songs/Apna_Bana_Le.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Apna_Bana_Le.mp3"
     },
     {
         "id": 3,
         "title": "Tujhe Kitna Chahne Lage (From \"Kabir Singh\")",
         "album": "Tujhe Kitna Chahne Lage (From \"Kabir Singh\")",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273ba03ff79dad25f7c3542382f",
-        "file_path": "songs/Tujhe_Kitna_Chahne_Lage_From_Kabir_Singh.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Tujhe_Kitna_Chahne_Lage_From_Kabir_Singh.mp3"
     },
     {
         "id": 4,
         "title": "Satranga (From \"ANIMAL\")",
         "album": "Satranga (From \"ANIMAL\")",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273021d7017f73387b008eab271",
-        "file_path": "songs/Satranga_From_ANIMAL.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Satranga_From_ANIMAL.mp3"
     },
     {
         "id": 5,
         "title": "Humdard (From \"Ek Villain\")",
         "album": "Ultimate Love Songs - Arijit Singh",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2731aa5adad8593923dcdf1a7d0",
-        "file_path": "songs/Humdard_From_Ek_Villain.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Humdard_From_Ek_Villain.mp3"
     },
     {
         "id": 6,
         "title": "O Maahi",
         "album": "Dunki",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273ab1e3b16de1c7ec009880e97",
-        "file_path": "songs/O_Maahi.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/O_Maahi.mp3"
     },
     {
         "id": 7,
         "title": "Tainu Khabar Nahi - From \"Munjya\"",
         "album": "Tainu Khabar Nahi (From \"Munjya\")",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b27367a876fee5cd00ed0f395a9e",
-        "file_path": "songs/Tainu_Khabar_Nahi_-_From_Munjya.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Tainu_Khabar_Nahi_-_From_Munjya.mp3"
     },
     {
         "id": 8,
         "title": "Heeriye (feat. Arijit Singh)",
         "album": "Heeriye (feat. Arijit Singh)",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2734a60872ae145776164540a7f",
-        "file_path": "songs/Heeriye_feat._Arijit_Singh.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Heeriye_feat._Arijit_Singh.mp3"
     },
     {
         "id": 9,
         "title": "Agar Tum Saath Ho (From \"Tamasha\")",
         "album": "Love Forever With Arijit Singh",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2737569cbe3695608074d9fd389",
-        "file_path": "songs/Agar_Tum_Saath_Ho_From_Tamasha.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Agar_Tum_Saath_Ho_From_Tamasha.mp3"
     },
     {
         "id": 10,
         "title": "Tum Hi Ho",
         "album": "Aashiqui 2",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2736404721c1943d5069f0805f3",
-        "file_path": "songs/Tum_Hi_Ho.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Tum_Hi_Ho.mp3"
     }
 ]
 export const sidheMot = [
@@ -392,69 +392,69 @@ export const sidheMot = [
         "title": "Hola Amigo",
         "album": "FAR FROM OVER",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b27383e257b20f473f0063cdd351",
-        "file_path": "songs/Hola_Amigo.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Hola_Amigo.mp3"
     },
     {
         "id": 2,
         "title": "Khatta Flow",
         "album": "Lunch Break",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273b7b544e5241b69574edc814e",
-        "file_path": "songs/Khatta_Flow.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Khatta_Flow.mp3"
     },
     {
         "id": 3,
         "title": "KODAK",
         "album": "MONOPOLY MOVES",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2730be866d7779f5058a81e48c4",
-        "file_path": "songs/KODAK.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/KODAK.mp3"
     },
     {
         "id": 4,
         "title": "Raat Ki Rani",
         "album": "SHAKTI",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2739750614dd177fa9137726f07",
-        "file_path": "songs/Raat_Ki_Rani.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Raat_Ki_Rani.mp3"
     },
     {
         "id": 5,
         "title": "RED",
         "album": "Kshama",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b2733f18f7a781cad23e074c82b5",
-        "file_path": "songs/RED.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/RED.mp3"
     },
     {
         "id": 6,
         "title": "Nanchaku",
         "album": "\u0928",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273d65e2670b7176415b9d88a59",
-        "file_path": "songs/Nanchaku.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Nanchaku.mp3"
     },
     {
         "id": 7,
         "title": "11K",
         "album": "Lunch Break",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273b7b544e5241b69574edc814e",
-        "file_path": "songs/11K.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/11K.mp3"
     },
     {
         "id": 8,
         "title": "Luka Chippi",
         "album": "Lunch Break",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273b7b544e5241b69574edc814e",
-        "file_path": "songs/Luka_Chippi.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Luka_Chippi.mp3"
     },
     {
         "id": 9,
         "title": "Namastute",
         "album": "\u0928",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273d65e2670b7176415b9d88a59",
-        "file_path": "songs/Namastute.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Namastute.mp3"
     },
     {
         "id": 10,
         "title": "SHUTDOWN",
         "album": "SHUTDOWN",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273490b544e5b5174dee355b30a",
-        "file_path": "songs/SHUTDOWN.mp3"
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/SHUTDOWN.mp3"
     }
 ]
