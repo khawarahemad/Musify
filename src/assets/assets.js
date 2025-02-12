@@ -458,3 +458,96 @@ export const sidheMot = [
         "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/SHUTDOWN.mp3"
     }
 ]
+export const phoNk =[
+    {
+        "id": 1,
+        "title": "POP POP",
+        "album": "DEADLY TIMES",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27368efbf2e90c0bf0e6c718734",
+        "file_path": "songs/Phonk_Music_2024_\u203b_Best_Aggressive_Drift_Phonk_TikTok_Phonk_\u203b_\u0424\u043e\u043d\u043a_2024.mp3"
+    },
+    {
+        "id": 2,
+        "title": "SHOOT YOU",
+        "album": "DEADLY TIMES",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27368efbf2e90c0bf0e6c718734",
+        "file_path": "songs/msht_-_One_Shot_PHONK.mp3"
+    },
+    {
+        "id": 3,
+        "title": "CONSEQUENCES",
+        "album": "DEADLY TIMES",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27368efbf2e90c0bf0e6c718734",
+        "file_path": "songs/What_if_there_was_a_song_the_goes_like..._\ud83e\udd27_shorts_phonk_musicproducer.mp3"
+    },
+    {
+        "id": 4,
+        "title": "LOWKEY",
+        "album": "DEADLY TIMES",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27368efbf2e90c0bf0e6c718734",
+        "file_path": "songs/YCK_-_Lowkey_II.mp3"
+    },
+    {
+        "id": 5,
+        "title": "RUN UP",
+        "album": "DEADLY TIMES",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27368efbf2e90c0bf0e6c718734",
+        "file_path": "songs/Top_5_phonk_songs_of_the_month.mp3"
+    },
+    {
+        "id": 6,
+        "title": "RIDIN SPINNERS",
+        "album": "DEADLY TIMES",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27368efbf2e90c0bf0e6c718734",
+        "file_path": "songs/Phonk_Killer_-_RIDING_SPINNERS_SPED_UP.mp3"
+    },
+    {
+        "id": 7,
+        "title": "MEGALOMANIA",
+        "album": "VOICE OF THE SOUL",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273f18e8277277e3255cae990b5",
+        "file_path": "songs/MEGALOMANIA_\u2039PHONK\u203a.mp3"
+    },
+    {
+        "id": 8,
+        "title": "DEATH DAGGER",
+        "album": "VOICE OF THE SOUL",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273f18e8277277e3255cae990b5",
+        "file_path": "songs/DEATH_DAGGER.mp3"
+    },
+    {
+        "id": 9,
+        "title": "ALTERNATIVE REALITY",
+        "album": "VOICE OF THE SOUL",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273f18e8277277e3255cae990b5",
+        "file_path": "songs/ALTERNATIVE_REALITY.mp3"
+    },
+    {
+        "id": 10,
+        "title": "REVENGE",
+        "album": "VOICE OF THE SOUL",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273f18e8277277e3255cae990b5",
+        "file_path": "songs/REVENGE.mp3"
+    },
+    {
+        "id": 11,
+        "title": "MOVEMENT",
+        "album": "VOICE OF THE SOUL",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273f18e8277277e3255cae990b5",
+        "file_path": "songs/Pham_-_Movements_ft._Yung_Fusion_[EP_Version].mp3"
+    },
+    {
+        "id": 12,
+        "title": "BOOM",
+        "album": "VOICE OF THE SOUL",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273f18e8277277e3255cae990b5",
+        "file_path": "songs/Top_7_Viral_Phonk_Songs_of_2024..mp3"
+    },
+    {
+        "id": 13,
+        "title": "ELECTRIC SHOCK",
+        "album": "VOICE OF THE SOUL",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273f18e8277277e3255cae990b5",
+        "file_path": "songs/Top_7_Viral_Phonk_Songs_of_2024..mp3"
+    }
+]
