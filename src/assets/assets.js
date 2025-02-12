@@ -122,7 +122,29 @@ export const albumsData = [
         image: "https://i.scdn.co/image/ab67616d0000b2730de04fd2c7c3bdc0a1d765f5",
         desc:"Your weekly update of the most played tracks",
         bgColor:"#744210"
+    },
+    {
+        id:7,
+        name: "Darshan Raval",
+        image: "https://i.scdn.co/image/ab67616d0000b273fcf423d32f3e1933ecfdebea",
+        desc:"Your weekly update of the most played tracks",
+        bgColor:"#744210"
+    },
+    {
+        id:8,
+        name: "Out of Control",
+        image: "https://i.scdn.co/image/ab67616d0000b2738991bd94af8bf884f484f41a",
+        desc:"Your weekly update of the most played tracks",
+        bgColor:"#744210"
+    },
+    {
+        id:9,
+        name: "Dream Girl",
+        image: "https://i.scdn.co/image/ab67616d0000b2733e01137aab57d4d151f8a0d1",
+        desc:"Your weekly update of the most played tracks",
+        bgColor:"#744210"
     }
+
 ]
 
 export const songsData = [
