@@ -263,6 +263,13 @@ export const TopHit =[
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273dd5eaafc5f4075139d7f34b4",
         "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Khoobsurat_From_Stree_2.mp3"
     },
+    {
+        "id": 8,
+        "title": "Husn",
+        "album": "Husn",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b2730d3449f333a83a25feb423f8",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Husn.mp3"
+    },
 ]
 export const songsData2 = [
     {
@@ -571,5 +578,119 @@ export const phoNk =[
         "album": "VOICE OF THE SOUL",
         "album_cover": "https://i.scdn.co/image/ab67616d0000b273f18e8277277e3255cae990b5",
         "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Top_7_Viral_Phonk_Songs_of_2024..mp3"
+    }
+]
+export const Anuv_Jain = [
+    {
+        "id": 1,
+        "title": "Afsos",
+        "album": "Afsos",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b2738537cf974af2c408bdd8e1a6",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Afsos.mp3"
+    },
+    {
+        "id": 2,
+        "title": "Ocean - Orchestral Version",
+        "album": "Ocean (Orchestral Version)",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273e10a12cb468f2a5f5bff2090",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Ocean_-_Orchestral_Version.mp3"
+    },
+    {
+        "id": 3,
+        "title": "Jo Tum Mere Ho",
+        "album": "Jo Tum Mere Ho",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27372a77d038887cdc425f5ee55",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Jo_Tum_Mere_Ho.mp3"
+    },
+    {
+        "id": 4,
+        "title": "Baarishein (feat. NATURE)",
+        "album": "Baarishein (feat. NATURE)",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27385e91583c2ec4cc8bb1fa5a9",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Baarishein_feat._NATURE.mp3"
+    },
+    {
+        "id": 5,
+        "title": "Husn",
+        "album": "Husn",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b2730d3449f333a83a25feb423f8",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Husn.mp3"
+    },
+    {
+        "id": 6,
+        "title": "Baarishein (Acoustic)",
+        "album": "Baarishein (Acoustic)",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273e58a3f615ffeadc74015e3f0",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Baarishein_Acoustic.mp3"
+    },
+    {
+        "id": 7,
+        "title": "Antariksh",
+        "album": "Antariksh",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273055a3b0eef43e8288a010bbf",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Antariksh.mp3"
+    },
+    {
+        "id": 8,
+        "title": "Meri Baaton Mein Tu",
+        "album": "Meri Baaton Mein Tu",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b27349b147260e16e0cebd211dd1",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Meri_Baaton_Mein_Tu.mp3"
+    },
+    {
+        "id": 9,
+        "title": "Alag Aasmaan - Acoustic",
+        "album": "Alag Aasmaan (Acoustic)",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273500e41ab4ec4fe40f22a0b1b",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Alag_Aasmaan_-_Acoustic.mp3"
+    },
+    {
+        "id": 10,
+        "title": "Gul",
+        "album": "Gul",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b2734cdf85ea439ad82b1b0a69ea",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Gul.mp3"
+    },
+    {
+        "id": 11,
+        "title": "Mishri",
+        "album": "Mishri",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273aac0305160f2e950afa2ff5f",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Mishri.mp3"
+    },
+    {
+        "id": 12,
+        "title": "Alag Aasmaan",
+        "album": "Alag Aasmaan",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b2735d7a296e99b415bc012c03e3",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Alag_Aasmaan.mp3"
+    },
+    {
+        "id": 13,
+        "title": "Maula",
+        "album": "Maula",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273707817f01762adbee6fef97b",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Maula.mp3"
+    },
+    {
+        "id": 14,
+        "title": "Riha",
+        "album": "Riha",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b2733f0728f55894526094f777f9",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Riha.mp3"
+    },
+    {
+        "id": 15,
+        "title": "Ocean",
+        "album": "Ocean",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273702f7ba36ad382c93a733e1b",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Ocean.mp3"
+    },
+    {
+        "id": 16,
+        "title": "Baarishein",
+        "album": "Baarishein",
+        "album_cover": "https://i.scdn.co/image/ab67616d0000b273d8ca783fa570b57e082f4374",
+        "file_path": "https://pub-b03428fdf2a349f384cb1a14c6700866.r2.dev/songs/Baarishein.mp3"
     }
 ]

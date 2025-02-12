@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbar from "./Navbar";
-import { albumsData, TopHit, Arijit_Singh, songsData2, sidheMot, phoNk } from "../assets/assets";
+import { albumsData, TopHit, Arijit_Singh, songsData2, sidheMot, phoNk, Anuv_Jain } from "../assets/assets";
 import AlbumItem from "./AlbumItem";
 import SongItem from "./SongItem";
 
@@ -117,6 +117,7 @@ const DisplayHome = () => {
       {/* Songs Sections */}
       {[{ title: "Today’s Biggest Hits", data: TopHit },
       { title: "Arijit Singh", data: Arijit_Singh },
+      { title: "Anuv Jain", data: Anuv_Jain },
       { title: "A.R. Rahman", data: songsData2 },
       { title: "PHONK", data: phoNk },
       { title: "Seedhe Maut", data: sidheMot }].map(({ title, data }) => (
